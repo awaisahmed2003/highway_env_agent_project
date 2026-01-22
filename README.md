@@ -1,7 +1,7 @@
 ![evolution](https://github.com/user-attachments/assets/6a0ff95f-66db-417e-b12e-0d2c23984e78)
-Autonomous Driving in Dense Traffic (Highway-Env)
+**Autonomous Driving in Dense Traffic (Highway-Env)
 Awais Ahmed – 2281583
-Adam El Kaissi – 2101431 
+Adam El Kaissi – 2101431 **
 
 Project Overview
 This project focuses on training an autonomous vehicle to navigate a dense highway traffic environment using Reinforcement Learning (RL). The agent must balance high-speed driving with collision avoidance, making this a multi-objective optimization problem in a dynamic and stochastic environment.
@@ -101,6 +101,8 @@ What the visualization shows:
 •	 Fully Trained Agent: Smooth lane changes, anticipatory braking, sustained high-speed travel.
 Because all agents are evaluated with the same random seed and traffic layout, the behavioral differences can be directly attributed to learning progress rather than environment randomness. This visual evidence strongly complements the training reward curves.
 
+
+ 
  Learning Dynamics
 Average Speed
 │          ██████████████
@@ -109,12 +111,18 @@ Average Speed
 │
 └────────────────────────── Training Time
 
+
+
+
 Collision Frequency
 │ ███████████
 │ ██████
 │ ██
 │
 └────────────────────────── Training Time
+
+
+
 As training progresses, the agent achieves higher sustained speeds while dramatically reducing collisions, demonstrating successful multi-objective optimization.
 
 Why This Project Matters
