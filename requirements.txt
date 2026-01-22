@@ -1,0 +1,7 @@
+gymnasium
+highway-env
+stable-baselines3
+numpy
+matplotlib
+pillow
+imageio
