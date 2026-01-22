@@ -5,6 +5,9 @@
 
 ---
 
+![evolution](https://github.com/user-attachments/assets/55c64a61-92c0-4f33-8d2b-c3eec9d6f69a)
+
+
 ## 🔹 Project Overview
 
 This project focuses on training an autonomous vehicle to navigate a dense highway traffic environment using Reinforcement Learning (RL). The agent must balance high-speed driving with collision avoidance, making this a multi-objective optimization problem in a dynamic and stochastic environment.
