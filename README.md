@@ -127,7 +127,7 @@ This setup forces the agent to learn anticipatory and defensive behaviors while 
 ---
 
 
-**The Math: Custom Reward Function**
+**🔹 The Math: Custom Reward Function**
 ---
 The learning objective is encoded through a custom reward function designed to balance speed and safety:
 
