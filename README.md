@@ -175,7 +175,7 @@ The magnitude of the collision penalty dominates the reward signal, ensuring tha
 **Training Progress**
 ---
 
-During early training, the agent behaves similarly to a random policy, frequent collisions, unstable lane changes, and low cumulative reward. As training progresses, the agent learns:
+During early training, the agent behaves similarly to a random policy: frequent collisions, unstable lane changes, and low cumulative reward. As training progresses, the agent learns:
 
 ---
 
