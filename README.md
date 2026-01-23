@@ -4,12 +4,20 @@
 **Adam El Kaissi – 2101431**
 
 ---
+**🔹Visual Proof: Agent Learning Evolution** 
+---
+
+The following embedded evolution video provides immediate visual evidence of learning progression across three stages under identical traffic conditions:
+1.	Untrained Agent (Random Actions)
+2.	Half-Trained Agent (~20% Training)
+3.	Fully-Trained Agent (40k Timesteps)
+
 
 
 
 https://github.com/user-attachments/assets/f1708e53-bca8-4b5f-87b0-5c927c0cdf70
 
-
+The comparison clearly shows the transition from erratic, collision-prone behavior to smooth, anticipatory, high-speed driving.
 
 
 ## 🔹 Project Overview
@@ -118,53 +126,97 @@ This setup forces the agent to learn anticipatory and defensive behaviors while 
 
 ---
 
-## 🔹 Reward Design
 
-Reward shaping plays a critical role in balancing speed and safety.
+**The Math: Custom Reward Function**
+---
+The learning objective is encoded through a custom reward function designed to balance speed and safety:
 
-### Reward Components
+---
+**R(s,a)=r_speed+r_lane+r_collision**
+---
+Where:
+---
+•	High-speed reward (+2.5): Encourages maintaining higher velocities
 
-| Component | Purpose |
-|---------|---------|
-| high_speed_reward (+2.5) | Encourage fast driving |
-| collision_reward (−8.0) | Strongly penalize crashes |
-| right_lane_reward (+0.05) | Mild lane discipline incentive |
+---
+•	Right-lane reward (+0.05): Provides mild lane discipline
 
-The collision penalty dominates the reward signal, ensuring that unsafe high-speed behavior is consistently discouraged. This results in a learned policy that is confident but risk-aware.
+---
+•	Collision penalty (−8.0): Strongly discourages unsafe behavior
+
+---
+The magnitude of the collision penalty dominates the reward signal, ensuring that reckless high-speed strategies are consistently penalized.
 
 ---
 
-## 🔹 Results & Performance
 
-### Training Curves (Quantitative Analysis)
+## 🔹 Training Analysis
 
-The learning progress of the agent is visualized using the training reward curve recorded during DQN training.
+### The Graph: Reward vs Episodes 
 
-Analysis of Training Curve:
+<img width="700" height="500" alt="image" src="https://github.com/user-attachments/assets/f9a72796-3792-49d1-ae5d-0e41bbe0f266" />
 
-- Early episodes show low and unstable rewards, corresponding to random exploration and frequent collisions.
-- As training progresses, the average episode reward steadily increases, indicating improved lane selection and speed control.
-- Reward variance decreases over time, showing that the policy becomes more stable and consistent.
 
-This curve confirms that the agent is not only improving qualitatively (behavior) but also optimizing the reward objective quantitatively.
+**The Commentary: Learning Behavior Over Time** 
+---
+
+•	Early Phase: Rewards remain low and unstable due to random exploration and frequent collisions.
+
+---
+•	 Mid Training: The agent begins to survive longer episodes, indicating improved lane selection and speed modulation. 
+
+---
+•	Late Training: Rewards rise steadily and variance decreases, demonstrating a stable policy that balances speed with safety.
 
 ---
 
 ## 🔹 Behavioral Evaluation (Visual Comparison)
 
+**Training Progress**
+---
+
+During early training, the agent behaves similarly to a random policy, frequent collisions, unstable lane changes, and low cumulative reward. As training progresses, the agent learns:
+
+---
+
+•	When to slow down instead of forcing overtakes
+
+---
+•	How to exploit open lanes
+
+---
+•	How to maintain high speed without aggressive collisions
+
+---
+The training reward curve shows a clear upward trend, indicating successful policy improvement.
+
+---
 To clearly demonstrate learning progress, we generated a single evolution video comparing three agents under identical initial traffic conditions:
 
-1. Untrained Agent (Random Actions)
-2. Half Trained Agent (~20% of training)
-3. Fully Trained Agent (40k timesteps)
+---
+1.	Untrained Agent (Random Actions)
+---
+2.	Half Trained Agent (~20% of training)
+   
+	---
+3.	Fully Trained Agent (40k timesteps)
+	
+	---
+ 
+**What the visualization shows:**
+---
+•	 Untrained Agent: Erratic acceleration, poor lane discipline, frequent early collisions.
 
-What the visualization shows:
+---
+•	 Half Trained Agent: Begins to anticipate traffic but still makes unsafe merges.
 
-- Untrained Agent: Erratic acceleration, poor lane discipline, frequent early collisions.
-- Half Trained Agent: Begins to anticipate traffic but still makes unsafe merges.
-- Fully Trained Agent: Smooth lane changes, anticipatory braking, sustained high-speed travel.
+---
+•	 Fully Trained Agent: Smooth lane changes, anticipatory braking, sustained high-speed travel.
 
+---
 Because all agents are evaluated with the same random seed and traffic layout, the behavioral differences can be directly attributed to learning progress rather than environment randomness. This visual evidence strongly complements the training reward curves.
+
+
 
 ---
 
@@ -181,6 +233,35 @@ Collision Frequency Over Training
 As training progresses, the agent achieves higher sustained speeds while dramatically reducing collisions, demonstrating successful multi-objective optimization.
 
 ---
+## 🔹 Challenges & Failures 
+---
+**Technical Hurdle: Unsafe Looping and Aggressive Lane Switching**
+---
+A major challenge encountered during training was the agent developing a looping behavior, repeatedly changing lanes at high speed without making forward progress. This resulted in frequent collisions and poor rewards.
+
+---
+ **Cause:**
+ ---
+•	Overly aggressive exploration 
+
+---
+•	Insufficient penalty for unsafe maneuvers 
+
+---
+**Solution:**
+---
+
+•	Increased the collision penalty to dominate the reward signal 
+
+----
+•	Reduced exploration more aggressively
+
+---
+•	Adjusted policy frequency to encourage smoother control 
+
+---
+After these changes, the agent adopted anticipatory braking and more deliberate lane changes, leading to stable learning and improved performance.
+
 
 ## 🔹 Why This Project Matters
 
