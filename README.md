@@ -157,7 +157,7 @@ The magnitude of the collision penalty dominates the reward signal, ensuring tha
 <img width="700" height="500" alt="image" src="https://github.com/user-attachments/assets/f9a72796-3792-49d1-ae5d-0e41bbe0f266" />
 
 
-**The Commentary: Learning Behavior Over Time** 
+**Learning Behavior Over Time** 
 ---
 
 •	Early Phase: Rewards remain low and unstable due to random exploration and frequent collisions.
