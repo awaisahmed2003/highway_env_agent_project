@@ -20,6 +20,14 @@ https://github.com/user-attachments/assets/f1708e53-bca8-4b5f-87b0-5c927c0cdf70
 
 The comparison clearly shows the transition from erratic, collision-prone behavior to smooth, anticipatory, high-speed driving.
 
+Quick Start: (No Training)
+All trained models are already included in this repository.
+To run the project and reproduce the results **without training**:
+
+pip install -r requirements.txt
+python evaluate.py
+
+
 
 ## 🔹 Project Overview
 
