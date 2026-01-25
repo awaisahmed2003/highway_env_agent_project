@@ -26,7 +26,7 @@ FPS = 20                     # recording frames per second
 SEED = 42                       # seed to reproduce the same scenario for each agent
 
 # Load the trained models
-model_half = DQN.load("dqn_highway_early.zip")
+model_half = DQN.load("dqn_highway_half.zip")
 model_full = DQN.load("dqn_highway_final.zip")
 
 # Prepare three environments (one for each stage) with identical initial conditions
@@ -157,3 +157,4 @@ env_full.close()
 # Save the combined frames as a GIF (evolution video)
 imageio.mimsave("evolution.gif", frames, fps=FPS)
 print("Evolution video saved as evolution.gif")
+
