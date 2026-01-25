@@ -3,16 +3,6 @@
 **Awais Ahmed – 2281583**  
 **Adam El Kaissi – 2101431**
 
-## Quick Start (No Training Required)
-
-All trained models are already included in this repository.
-
-To run the project and reproduce the results **without training**:
-
-```bash
-pip install -r requirements.txt
-python evaluate.py
-
 
 ---
 **🔹Visual Proof: Agent Learning Evolution** 
