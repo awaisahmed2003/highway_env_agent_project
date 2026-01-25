@@ -324,6 +324,7 @@ The combination of quantitative rewards and qualitative visual evidence confirms
 - training_curve.png – Learning performance over time
 - evolution.gif – Behavioral comparison of agent learning stage
 - requirements.txt - List of all required dependencies
+- dqn_highway_half/final - Training files for evaluate.py
 
 ---
 
